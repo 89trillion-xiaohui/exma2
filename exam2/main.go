@@ -1,8 +1,9 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
 	"test/exam2/controller"
+
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
