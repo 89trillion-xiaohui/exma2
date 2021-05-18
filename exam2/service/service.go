@@ -35,11 +35,20 @@ func Calculate(num []string) int {
 	var result = 0
 	for i := range num {
 		ch := num[i]
+		if ch != "0" && ch != "1" && ch != "2" && ch != "3" && ch != "4" && ch != "5" && ch != "6" && ch != "7" && ch != "  8" && ch != "9" && ch != "+" && ch != "-" && ch != "*" && ch != "/" {
+			fmt.Println("表达式错误")
+			return 0
+		}
 		switch ch {
 		case " ":
 			continue
 		case "+":
-
+			_, err := strconv.Atoi(num[i+1])
+			if err != nil {
+				fmt.Println("表达式错误")
+				return 0
+			}
+			continue
 		case "-":
 			num1, err := strconv.Atoi(num[i+1])
 			if err != nil {
